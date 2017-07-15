@@ -25,6 +25,10 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
     Authorization: "Bearer " + process.env.GITHUB_ACCESS_TOKEN,
   })
     .then(response => {
+      res.header("Access-Control-Allow-Origin", "*")
+      res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE")
+      res.header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+
       res.status(response.status)
       return response.json()
     })
