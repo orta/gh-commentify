@@ -1,0 +1,22 @@
+{
+  "name": "GH Commentify",
+  "description": "Re-direct requests to GH comments.",
+  "website": "https://github.com/orta/gh-commentify",
+  "repository": "https://github.com/orta/gh-commentify",
+  "keywords": ["github", "express"],
+  "env": {
+    "ONLY_OWNER": {
+      "description": "Only allow requests to this owner (the owner is the first bit of a repo slug) e.g. artsy in artsy/artsy.github.io",
+      "value": "artsy"
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "The personal access token for the account which will be making the requests for comments",
+      "value": "artsy"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
