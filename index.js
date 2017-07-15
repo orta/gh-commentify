@@ -25,7 +25,7 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
     method: "GET",
     headers: {
       Accept: "application/vnd.github.v3.html+json",
-      Authorization: "Authorization: token " + process.env.GITHUB_ACCESS_TOKEN,
+      Authorization: "token " + process.env.GITHUB_ACCESS_TOKEN,
     },
   })
     .then(response => {

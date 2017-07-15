@@ -11,7 +11,7 @@
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "The personal access token for the account which will be making the requests for comments",
-      "value": "artsy"
+      "value": "213sdffsdf3rsdfs"
     }
   },
   "buildpacks": [
