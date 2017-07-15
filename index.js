@@ -22,8 +22,11 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
 
   // https://developer.github.com/v3/#authentication
   fetch(url, {
-    Accept: "application/vnd.github.v3.html+json",
-    Authorization: "Authorization: token " + process.env.GITHUB_ACCESS_TOKEN,
+    method: "GET",
+    headers: {
+      Accept: "application/vnd.github.v3.html+json",
+      Authorization: "Authorization: token " + process.env.GITHUB_ACCESS_TOKEN,
+    },
   })
     .then(response => {
       res.header("Access-Control-Allow-Origin", "*")
