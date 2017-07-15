@@ -19,10 +19,11 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
 
   const route = [gh, "repos", req.params.owner, req.params.repo, "issues", req.params.number, "comments"]
   const url = route.join("/")
-  console.log(url)
+
+  // https://developer.github.com/v3/#authentication
   fetch(url, {
     Accept: "application/vnd.github.v3.html+json",
-    Authorization: "Bearer " + process.env.GITHUB_ACCESS_TOKEN,
+    Authorization: "Authorization: token " + process.env.GITHUB_ACCESS_TOKEN,
   })
     .then(response => {
       res.header("Access-Control-Allow-Origin", "*")
