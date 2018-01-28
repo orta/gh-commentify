@@ -9,7 +9,7 @@ const parseLinkHeader = (header) => {
   var parts = header.split(',');
   var links = {};
   // Parse each part into a named link
-  parts.array.forEach(p => {
+  parts.forEach(p => {
     var section = p.split(';');
     if (section.length != 2) {
       throw new Error("section could not be split on ';'");
