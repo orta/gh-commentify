@@ -3,7 +3,10 @@
   "description": "Re-direct requests to GH comments.",
   "website": "https://github.com/orta/gh-commentify",
   "repository": "https://github.com/orta/gh-commentify",
-  "keywords": ["github", "express"],
+  "keywords": [
+    "github",
+    "express"
+  ],
   "env": {
     "ONLY_OWNER": {
       "description": "Only allow requests to this owner (the owner is the first bit of a repo slug) e.g. artsy in artsy/artsy.github.io",
@@ -17,6 +20,9 @@
   "buildpacks": [
     {
       "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/zidizei/heroku-buildpack-tsc"
     }
   ]
 }
