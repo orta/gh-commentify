@@ -1,12 +1,14 @@
 # gh-commentify
 
-A repo you can use to work-around GH issue comment request limits by hosting your own server that makes authenticated requests on your behalf.
+A repo you can use to work-around GH issue comment request limits by hosting your own server that makes authenticated requests on your behalf. You can find out more [in this blog post](http://artsy.github.io/blog/2017/07/15/Comments-are-on/)
 
-It uses the same routes as GH's API, so you can just change the base URL.
+It uses the same routes as GH's API `/repos/:owner/:repo/issues/:number/comments`, so you can just change the base URL.
+
+The JSON will contain all of the comments (pagination is handled for you) and all their reactions embedded.
 
 # Setup
 
-Make a personal access token.
+Make a GitHub personal access token for the server to use.
 
 Click: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/orta/gh-commentify)
 
