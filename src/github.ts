@@ -3,27 +3,28 @@ import fetch, { RequestInit, Response } from "node-fetch"
 import parseLinkHeader from "./link-header"
 
 export interface GitHubInterface {
-  request: (path: string, method: string) => Promise<Response>,
-  requestUrl: (url: string, method: string) => Promise<Response>,
+  request: (path: string, method: string) => Promise<Response>
+  requestUrl: (url: string, method: string) => Promise<Response>
   paginate: (response: Response, previous: object[]) => Promise<object[]>
 }
 
-const GitHub = (githubToken: string) => {
+const GitHub = (githubToken: string, fetchFn = fetch) => {
   const request = async (path: string, method: string) => {
     const ghUrl = "https://api.github.com"
     return requestUrl([ghUrl, path].join("/"), method)
   }
   const requestUrl = async (url: string, method: string) => {
     const requestParams = {
-      method: method, headers: {
+      method: method,
+      headers: {
         Accept: "application/vnd.github.squirrel-girl-preview+json",
         Authorization: "token " + githubToken,
-      }
+      },
     }
-    return fetch(url, requestParams)
+    return fetchFn(url, requestParams)
   }
   const paginate = async (response: Response, previous: object[]) => {
-    const responseObject = await response
+    const responseObject = response
     let next: string | null
     const linkHeader = responseObject.headers["Link"]
     if (linkHeader != null) {
@@ -39,7 +40,7 @@ const GitHub = (githubToken: string) => {
   return {
     request: request,
     requestUrl: requestUrl,
-    paginate: paginate
+    paginate: paginate,
   }
 }
 export { GitHub }

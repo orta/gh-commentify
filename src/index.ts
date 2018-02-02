@@ -16,7 +16,7 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
   }
   const repo = req.params.repo
   const number = req.params.number
-  comments(owner, repo, number, github).then((comments) => {
+  comments(owner, repo, number, github).then(comments => {
     res.header("Access-Control-Allow-Origin", "*")
     res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE")
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization")
@@ -30,4 +30,3 @@ app.get("/", (request, res) => {
 app.listen(app.get("port"), () => {
   console.log(`Started server at http://localhost:${process.env.PORT || 5000}`)
 })
-
