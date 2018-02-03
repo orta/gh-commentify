@@ -44,6 +44,8 @@ The JSON looks like this:
     "author_association": "NONE",
     "body": "This is an interesting system you've built to handle comments. Do you foresee any problems with using Github Issues for comments while also using Github Issues for issue tracking? Or do you think just having the label \"Comment Thread\" and using Github's filtering is sufficient for separating the two and keeping things organized?\r\n\r\nAdditionally, were there any surprises that came up when implementing this system? For example, needing to support some kind of content of a comment (maybe an attached file?) and styling it correctly that didn't cross your mind when first implementing this.",
 
+    "body_html": "<p>Having comments on GH issues also made it really easy to hook up to a slack channel - so that I can use my normal stream-based flow of issue management. <g-emoji class=\"g-emoji\" alias=\"tada\" fallback-src=\"https://assets-cdn.github.com/images/icons/emoji/unicode/1f389.png\" ios-version=\"6.0\">🎉</g-emoji></p>\n<p><a href=\"https://user-images.githubusercontent.com/49038/28278078-dd0e0040-6ae9-11e7-9ca7-a35d245a52c4.png\" target=\"_blank\"><img src=\"https://user-images.githubusercontent.com/49038/28278078-dd0e0040-6ae9-11e7-9ca7-a35d245a52c4.png\" alt=\"screen shot 2017-07-17 at 12 16 37\" style=\"max-width:100%;\"></a></p>",
+
     "reactions": {
       "url": "https://api.github.com/repos/artsy/artsy.github.io/issues/comments/315774939/reactions",
       "total_count": 0,
