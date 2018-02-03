@@ -2,9 +2,16 @@
 
 A repo you can use to work-around GH issue comment request limits by hosting your own server that makes authenticated requests on your behalf. You can find out more [in this blog post](http://artsy.github.io/blog/2017/07/15/Comments-are-on/)
 
-It uses the same routes as GH's API `/repos/:owner/:repo/issues/:number/comments`, so you can just change the base URL.
+It provides:
 
-The JSON will contain all of the comments (pagination is handled for you) and all their reactions embedded.
+* The same comment route as GH's API `/repos/:owner/:repo/issues/:number/comments`
+* Is locked to one org by default.
+* Handles cross-domain requests
+* Paginates under-the-hood for you, so you make one request
+* Embeds comment Reactions into the request for you
+
+```js
+```
 
 # Setup
 

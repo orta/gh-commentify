@@ -6,24 +6,25 @@
   "author": "Orta Therox",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn tsc",
+    "postinstall": "yarn build",
     "test": "jest",
     "dev": "concurrently --kill-others \"tsc -w\" \"nodemon dist/index.js\"",
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "@types/express": "^4.11.1",
+    "@types/node-fetch": "^1.6.7",
     "express": "^4.15.3",
-    "node-fetch": "^1.7.1"
+    "node-fetch": "^1.7.1",
+    "typescript": "^2.7.1"
   },
   "devDependencies": {
-    "@types/express": "^4.11.0",
     "@types/jest": "^22.1.0",
-    "@types/node-fetch": "^1.6.7",
     "concurrently": "^3.5.1",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
-    "ts-jest": "^22.0.1",
-    "typescript": "^2.6.2"
+    "ts-jest": "^22.0.3"
   },
   "jest": {
     "moduleFileExtensions": [
