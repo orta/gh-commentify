@@ -18,7 +18,7 @@ const GitHub = (githubToken: string, fetchFn = fetch) => {
     const requestParams = {
       method: method,
       headers: {
-        Accept: "application/vnd.github.squirrel-girl-preview+json",
+        Accept: "application/vnd.github.squirrel-girl-preview+json, application/vnd.github.v3.html+json",
         Authorization: "token " + githubToken,
       },
     }
