@@ -61,6 +61,12 @@ The JSON looks like this:
 ]
 ```
 
+# Front-End
+
+This is only a server, you're expected to write your own front-end. 
+
+If you're looking for an awesome all-in-one solution for using issues on static pages, check out https://utteranc.es
+
 # Setup
 
 1. Make a GitHub [personal access token](https://github.com/settings/tokens) for the server to use. It only needs `public_repo` if you have an public repo for comment. Otherwise, use `repo`.
