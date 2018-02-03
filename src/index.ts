@@ -14,6 +14,7 @@ app.get("/repos/:owner/:repo/issues/:number/comments", (req, res) => {
     res.json({ message: "Only can get comments with owner: " + owner })
     return
   }
+
   const repo = req.params.repo
   const number = req.params.number
   comments(owner, repo, number, github).then(comments => {

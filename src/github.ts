@@ -13,6 +13,7 @@ const GitHub = (githubToken: string, fetchFn = fetch) => {
     const ghUrl = "https://api.github.com"
     return requestUrl([ghUrl, path].join("/"), method)
   }
+
   const requestUrl = async (url: string, method: string) => {
     const requestParams = {
       method: method,
@@ -23,6 +24,7 @@ const GitHub = (githubToken: string, fetchFn = fetch) => {
     }
     return fetchFn(url, requestParams)
   }
+
   const paginate = async (response: Response, previous: object[]) => {
     const responseObject = response
     let next: string | null
@@ -30,6 +32,7 @@ const GitHub = (githubToken: string, fetchFn = fetch) => {
     if (linkHeader != null) {
       next = parseLinkHeader(linkHeader)["next"]
     }
+
     const collected = previous.concat(await responseObject.json())
     if (next == null) {
       return collected
@@ -37,6 +40,7 @@ const GitHub = (githubToken: string, fetchFn = fetch) => {
       return paginate(await requestUrl(next, "GET"), collected)
     }
   }
+
   return {
     request: request,
     requestUrl: requestUrl,

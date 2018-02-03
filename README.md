@@ -8,8 +8,8 @@ The JSON will contain all of the comments (pagination is handled for you) and al
 
 # Setup
 
-Make a GitHub personal access token for the server to use.
+1. Make a GitHub [personal access token](https://github.com/settings/tokens) for the server to use.
 
-Click: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/orta/gh-commentify)
+2. Click: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/orta/gh-commentify)
 
-This will get you up and started.
+After that, you are done, pretty simple.
